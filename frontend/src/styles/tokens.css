@@ -1,0 +1,46 @@
+:root {
+  /* Marca: confiança e dinheiro */
+  --primary: #0F766E;
+  --primary-hover: #115E59;
+  --primary-dark: #134E4A;
+  --primary-soft: #CCFBF1;
+  --primary-faint: #F0FDFA;
+
+  /* Estados: verde = bom, âmbar = atenção, coral = problema, azul = informação */
+  --success: #16A34A;
+  --success-soft: #DCFCE7;
+  --success-strong: #15803D;
+
+  --warning: #F59E0B;
+  --warning-soft: #FEF3C7;
+  --warning-strong: #B45309;
+
+  --danger: #E11D48;
+  --danger-soft: #FFE4E6;
+  --danger-strong: #BE123C;
+
+  --info: #2563EB;
+  --info-soft: #DBEAFE;
+  --info-strong: #1D4ED8;
+
+  /* Neutros */
+  --bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --border: #E2E8F0;
+  --text: #0F172A;
+  --text-muted: #64748B;
+  --text-soft: #94A3B8;
+
+  /* Forma */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 6%);
+  --shadow: 0 1px 3px rgb(15 23 42 / 8%), 0 8px 24px rgb(15 23 42 / 6%);
+
+  /* Tipografia */
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+
+  --sidebar-w: 264px;
+}

@@ -1,0 +1,249 @@
+.shell {
+  min-height: 100vh;
+}
+
+/* ---------- Menu lateral ---------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-w);
+  padding: 20px 14px;
+  overflow-y: auto;
+  background: var(--primary-dark);
+  color: #E6FFFA;
+  transition: transform 0.22s ease;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 10px 20px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.sidebar-brand small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: #99F6E4;
+  opacity: 0.8;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-title {
+  padding: 18px 12px 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5EEAD4;
+  opacity: 0.75;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  color: #CCFBF1;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-link:hover {
+  background: rgb(255 255 255 / 8%);
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background: rgb(255 255 255 / 15%);
+  font-weight: 600;
+  color: #fff;
+}
+
+.sidebar-foot {
+  margin-top: auto;
+  padding: 14px 10px 4px;
+  font-size: 12px;
+  color: #99F6E4;
+  opacity: 0.7;
+}
+
+/* ---------- Área principal ---------- */
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: var(--sidebar-w);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 68px;
+  padding: 0 28px;
+  background: rgb(248 250 252 / 88%);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.topbar h1 {
+  font-size: 20px;
+}
+
+.topbar-space {
+  flex: 1;
+}
+
+.icon-btn {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.icon-btn:hover {
+  background: #F1F5F9;
+  text-decoration: none;
+}
+
+.bell-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: grid;
+  place-items: center;
+  min-width: 21px;
+  height: 21px;
+  padding: 0 5px;
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+  background: var(--danger);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 14px 4px 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #fff;
+}
+
+.user-chip-text {
+  line-height: 1.2;
+}
+
+.user-chip-text strong {
+  display: block;
+  font-size: 14px;
+}
+
+.user-chip-text span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.menu-btn {
+  display: none;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.aberta {
+    transform: none;
+    box-shadow: 0 0 40px rgb(0 0 0 / 30%);
+  }
+
+  .overlay.aberta {
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    display: block;
+    background: rgb(15 23 42 / 45%);
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .menu-btn {
+    display: inline-grid;
+  }
+
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .content {
+    padding: 20px 16px;
+  }
+
+  .user-chip {
+    padding-right: 4px;
+  }
+
+  .user-chip-text {
+    display: none;
+  }
+}

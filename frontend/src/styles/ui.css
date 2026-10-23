@@ -1,0 +1,389 @@
+/* ---------- Animações ---------- */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Botão de perigo ---------- */
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger-strong);
+}
+
+/* ---------- Janela (modal) ---------- */
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgb(15 23 42 / 50%);
+  animation: aparecer 0.15s ease;
+}
+
+.modal {
+  width: 100%;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: 0 24px 64px rgb(15 23 42 / 30%);
+  animation: subir 0.18s ease;
+}
+
+.modal-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-topo h3 {
+  font-size: 18px;
+}
+
+.modal-corpo {
+  padding: 22px;
+}
+
+.modal-rodape {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.dialogo-texto {
+  margin-bottom: 18px;
+  color: var(--text-muted);
+}
+
+/* ---------- Formulários em grelha ---------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.total-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2px 0 18px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: var(--primary-faint);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.total-preview strong {
+  font-family: var(--font-display);
+  font-size: 20px;
+}
+
+@media (max-width: 520px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Avisos (toasts) ---------- */
+.toasts {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: min(420px, calc(100vw - 40px));
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 14.5px;
+  animation: subir 0.2s ease;
+}
+
+.toast span {
+  flex: 1;
+}
+
+.toast button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.toast--sucesso {
+  background: var(--success-soft);
+  border-color: #BBF7D0;
+  color: var(--success-strong);
+}
+
+.toast--erro {
+  background: var(--danger-soft);
+  border-color: #FECDD3;
+  color: var(--danger-strong);
+}
+
+.toast--aviso {
+  background: var(--warning-soft);
+  border-color: #FDE68A;
+  color: var(--warning-strong);
+}
+
+.toast--info {
+  background: var(--info-soft);
+  border-color: #BFDBFE;
+  color: var(--info-strong);
+}
+
+/* ---------- Filtros ---------- */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding: 16px 18px;
+}
+
+.filtros .field {
+  min-width: 150px;
+  margin: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: #F1F5F9;
+}
+
+.chip.ativo {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* ---------- Resumo do período ---------- */
+.resumo-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.mini {
+  flex: 1;
+  min-width: 180px;
+  padding: 14px 18px;
+}
+
+.mini span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.mini strong {
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+/* ---------- Tabela ---------- */
+.tabela-card {
+  overflow: hidden;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela th {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: #F8FAFC;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.tabela td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #EEF2F6;
+  vertical-align: middle;
+}
+
+.tabela tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tabela tbody tr:hover {
+  background: #FAFCFD;
+}
+
+.tabela .dir {
+  text-align: right;
+}
+
+.produto-nome {
+  font-weight: 600;
+}
+
+.cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.cat-dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.nota {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.acao {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.acao:hover {
+  background: #F1F5F9;
+  color: var(--text);
+}
+
+.acao--ok:hover {
+  background: var(--success-soft);
+  border-color: #BBF7D0;
+  color: var(--success-strong);
+}
+
+.acao--perigo:hover {
+  background: var(--danger-soft);
+  border-color: #FECDD3;
+  color: var(--danger-strong);
+}
+
+/* No telemóvel, cada linha vira um cartão */
+@media (max-width: 760px) {
+  .tabela thead {
+    display: none;
+  }
+
+  .tabela,
+  .tabela tbody,
+  .tabela tr,
+  .tabela td {
+    display: block;
+    width: 100%;
+  }
+
+  .tabela tr {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tabela tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .tabela td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 0;
+    border: 0;
+    text-align: right;
+  }
+
+  .tabela td::before {
+    content: attr(data-label);
+    font-size: 12.5px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--text-muted);
+  }
+}
