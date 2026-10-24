@@ -4,6 +4,7 @@ import {
   Activity,
   Bell,
   LayoutDashboard,
+  ListChecks,
   LogOut,
   Menu,
   ShieldCheck,
@@ -20,6 +21,7 @@ import Logo from './Logo'
 const MENU = [
   { para: '/', rotulo: 'Painel', icone: LayoutDashboard, exato: true },
   { para: '/compras', rotulo: 'Compras', icone: ShoppingCart },
+  { para: '/lista-compras', rotulo: 'Lista de compras', icone: ListChecks },
   { para: '/categorias', rotulo: 'Categorias', icone: Tag },
   { para: '/estatisticas', rotulo: 'Estatísticas', icone: Activity },
   { para: '/notificacoes', rotulo: 'Notificações', icone: Bell },

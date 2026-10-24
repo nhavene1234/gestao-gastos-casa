@@ -1,0 +1,233 @@
+.listas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .listas {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lista {
+  overflow: hidden;
+}
+
+.lista-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 18px 12px;
+}
+
+.lista-topo h3 {
+  font-size: 18px;
+}
+
+.lista-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.lista-data {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+/* ---------- Progresso ---------- */
+.progresso {
+  padding: 0 18px 14px;
+}
+
+.progresso-txt {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.barra {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #EEF2F6;
+}
+
+.barra span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--primary);
+  transition: width 0.25s ease;
+}
+
+.barra.completa span {
+  background: var(--success);
+}
+
+/* ---------- Itens ---------- */
+.itens {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.itens-vazio {
+  padding: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  padding: 10px 18px;
+  border-bottom: 1px solid #EEF2F6;
+}
+
+.item-check {
+  display: flex;
+  flex: 1 1 150px;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.item-check input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.item-check input:disabled {
+  cursor: not-allowed;
+}
+
+.item-nome {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.item-qtd {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.item-preco {
+  min-width: 84px;
+  text-align: right;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.item--feito .item-nome {
+  text-decoration: line-through;
+  color: var(--text-soft);
+}
+
+.item--feito .item-preco {
+  color: var(--text-soft);
+}
+
+.item .acao {
+  width: 30px;
+  height: 30px;
+}
+
+/* ---------- Adicionar item ---------- */
+.add-item {
+  display: flex;
+  gap: 8px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  background: #F8FAFC;
+}
+
+.add-item .input {
+  height: 40px;
+}
+
+.add-item .add-nome {
+  flex: 1;
+  min-width: 0;
+}
+
+.add-item .add-qtd {
+  width: 72px;
+  text-align: center;
+}
+
+/* ---------- Rodapé ---------- */
+.lista-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+}
+
+.lista-total span {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.lista-total strong {
+  font-family: var(--font-display);
+  font-size: 20px;
+}
+
+.lista-total small {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-soft);
+}
+
+/* ---------- Janela de registo ---------- */
+.reg-linha {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr 1fr 1.3fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.reg-linha .field {
+  margin: 0;
+}
+
+.reg-nome {
+  align-self: center;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .reg-linha {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reg-nome {
+    grid-column: 1 / -1;
+  }
+}

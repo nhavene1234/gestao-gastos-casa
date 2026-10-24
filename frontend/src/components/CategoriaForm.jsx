@@ -9,8 +9,10 @@ const CORES = [
   '#EC4899', '#E11D48', '#F97316', '#F59E0B', '#22C55E', '#64748B',
 ]
 
-export default function CategoriaForm({ categoria, onGuardada, onFechar }) {
+// padrao = true: o admin cria ou edita uma categoria padrão do sistema
+export default function CategoriaForm({ categoria, padrao = false, onGuardada, onFechar }) {
   const eEdicao = Boolean(categoria)
+  const rota = padrao ? '/admin/categorias' : '/categorias'
 
   const [nome, setNome] = useState(categoria?.nome ?? '')
   const [cor, setCor] = useState(categoria?.cor ?? '#0F766E')
@@ -32,8 +34,8 @@ export default function CategoriaForm({ categoria, onGuardada, onFechar }) {
     setAEnviar(true)
     try {
       const { data } = eEdicao
-        ? await api.put(`/categorias/${categoria.id}`, corpo)
-        : await api.post('/categorias', corpo)
+        ? await api.put(`${rota}/${categoria.id}`, corpo)
+        : await api.post(rota, corpo)
       onGuardada(data)
     } catch (e) {
       setErro(mensagemErro(e))
@@ -41,13 +43,19 @@ export default function CategoriaForm({ categoria, onGuardada, onFechar }) {
     }
   }
 
+  const titulo = `${eEdicao ? 'Editar' : 'Nova'} categoria${padrao ? ' padrão' : ''}`
+
   return (
-    <Modal titulo={eEdicao ? 'Editar categoria' : 'Nova categoria'} onFechar={onFechar}>
+    <Modal titulo={titulo} onFechar={onFechar}>
       <form onSubmit={submeter} noValidate>
         {erro && (
           <div className="alert alert-error" role="alert">
             {erro}
           </div>
+        )}
+
+        {padrao && (
+          <div className="alert alert-info">Esta categoria vai aparecer para todos os utilizadores.</div>
         )}
 
         <div className="field">

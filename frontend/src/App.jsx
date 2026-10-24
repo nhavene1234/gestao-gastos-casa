@@ -1,16 +1,18 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import { ToastProvider } from './context/ToastContext'
-import EmBreve from './components/EmBreve'
 import Layout from './components/Layout'
 import ProtectedRoute from './components/ProtectedRoute'
 import Categorias from './pages/Categorias'
 import Compras from './pages/Compras'
 import Dashboard from './pages/Dashboard'
 import Estatisticas from './pages/Estatisticas'
+import ListaCompras from './pages/ListaCompras'
 import Login from './pages/Login'
 import Notificacoes from './pages/Notificacoes'
 import Registo from './pages/Registo'
+import AdminCategorias from './pages/admin/AdminCategorias'
+import AdminUtilizadores from './pages/admin/AdminUtilizadores'
 
 export default function App() {
   return (
@@ -30,6 +32,7 @@ export default function App() {
             >
               <Route index element={<Dashboard />} />
               <Route path="compras" element={<Compras />} />
+              <Route path="lista-compras" element={<ListaCompras />} />
               <Route path="categorias" element={<Categorias />} />
               <Route path="estatisticas" element={<Estatisticas />} />
               <Route path="notificacoes" element={<Notificacoes />} />
@@ -38,7 +41,7 @@ export default function App() {
                 path="admin/utilizadores"
                 element={
                   <ProtectedRoute papel="ADMIN">
-                    <EmBreve titulo="Utilizadores" />
+                    <AdminUtilizadores />
                   </ProtectedRoute>
                 }
               />
@@ -46,7 +49,7 @@ export default function App() {
                 path="admin/categorias"
                 element={
                   <ProtectedRoute papel="ADMIN">
-                    <EmBreve titulo="Categorias padrão" />
+                    <AdminCategorias />
                   </ProtectedRoute>
                 }
               />

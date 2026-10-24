@@ -1,0 +1,65 @@
+.pesquisa {
+  position: relative;
+  max-width: 380px;
+  margin-bottom: 16px;
+}
+
+.pesquisa svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  color: var(--text-soft);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.pesquisa .input {
+  padding-left: 42px;
+}
+
+.pessoa {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.pessoa .avatar {
+  flex: none;
+  width: 38px;
+  height: 38px;
+}
+
+.pessoa strong {
+  display: block;
+}
+
+.pessoa span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.tag-voce {
+  margin-left: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--primary-faint);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.acao--aviso:hover {
+  background: var(--warning-soft);
+  border-color: #FDE68A;
+  color: var(--warning-strong);
+}
+
+.aviso-texto {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--warning-soft);
+  font-size: 14px;
+  color: var(--warning-strong);
+}
