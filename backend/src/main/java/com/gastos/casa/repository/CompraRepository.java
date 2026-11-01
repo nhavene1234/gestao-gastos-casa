@@ -23,9 +23,9 @@ public interface CompraRepository extends JpaRepository<Compra, Long> {
             join fetch c.produto p
             join fetch p.categoria cat
             where c.utilizador.id = :uid
-              and (:de is null or c.dataCompra >= :de)
-              and (:ate is null or c.dataCompra <= :ate)
-              and (:categoriaId is null or cat.id = :categoriaId)
+              and c.dataCompra >= coalesce(:de, c.dataCompra)
+              and c.dataCompra <= coalesce(:ate, c.dataCompra)
+              and cat.id = coalesce(:categoriaId, cat.id)
             order by c.dataCompra desc, c.id desc
             """)
     List<Compra> filtrar(@Param("uid") Long uid,
