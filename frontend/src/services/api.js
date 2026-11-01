@@ -4,7 +4,7 @@ export const CHAVE_SESSAO = 'gastos.sessao'
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api',
-  timeout: 15000,
+ timeout: 60000,
 })
 
 // Função chamada quando o servidor recusa o token (sessão expirada ou conta desativada)
