@@ -34,7 +34,10 @@ export default function Login() {
   }
 
   return (
-    <AuthLayout titulo="Bem-vindo de volta" subtitulo="Entre para ver os seus gastos.">
+        <AuthLayout
+      titulo="Bem-vindo à Gestão de Gastos"
+      subtitulo="Entre na sua conta para controlar as despesas da sua casa."
+    >
       <form onSubmit={submeter} noValidate>
         {erro && (
           <div className="alert alert-error" role="alert">
