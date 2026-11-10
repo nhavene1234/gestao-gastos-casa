@@ -8,7 +8,7 @@ export const formatarNumero = (valor) => formatoNumero.format(Number(valor ?? 0)
 export const formatarMT = (valor) => `${formatarNumero(valor)} MT`
 
 export const formatarQuantidade = (valor) =>
-  Number(valor ?? 0).toLocaleString('pt-PT', { maximumFractionDigits: 2 })
+  Number(valor ?? 0).toLocaleString('pt-PT', { maximumFractionDigits: 4 })
 
 // Datas "AAAA-MM-DD" lidas à mão, para não haver deslocamento por fuso horário
 export function paraData(iso) {

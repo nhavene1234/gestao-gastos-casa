@@ -20,9 +20,9 @@ public record CompraRequest(
         Long categoriaId,
 
         @NotNull(message = "A quantidade é obrigatória")
-        @DecimalMin(value = "0.01", message = "A quantidade deve ser maior que zero")
-        @DecimalMax(value = "9999.99", message = "A quantidade máxima é 9999,99")
-        @Digits(integer = 4, fraction = 2, message = "A quantidade só pode ter 2 casas decimais")
+        @DecimalMin(value = "0.0001", message = "A quantidade deve ser maior que zero")
+        @DecimalMax(value = "9999.9999", message = "A quantidade máxima é 9999,99")
+        @Digits(integer = 4, fraction = 4, message = "A quantidade só pode ter 4 casas decimais")
         BigDecimal quantidade,
 
         @NotNull(message = "O preço unitário é obrigatório")

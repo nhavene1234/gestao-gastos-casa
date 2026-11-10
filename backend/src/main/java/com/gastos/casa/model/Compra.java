@@ -28,7 +28,7 @@ public class Compra {
     @JoinColumn(name = "produto_id")
     private Produto produto;
 
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false, precision = 10, scale = 4)
     private BigDecimal quantidade;
 
     @Column(name = "preco_unitario", nullable = false, precision = 12, scale = 2)

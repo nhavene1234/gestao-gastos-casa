@@ -26,7 +26,7 @@ public class ItemLista {
     @Column(nullable = false, length = 120)
     private String nome;
 
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false, precision = 10, scale = 4)
     private BigDecimal quantidade = BigDecimal.ONE;
 
     @Column(name = "preco_estimado", precision = 12, scale = 2)
