@@ -43,7 +43,7 @@ export default function Registo() {
   }
 
   return (
-    <AuthLayout titulo="Criar conta" subtitulo="É grátis e demora menos de um minuto.">
+    <AuthLayout titulo="Criar conta" subtitulo="">
       <form onSubmit={submeter} noValidate>
         {erro && (
           <div className="alert alert-error" role="alert">
@@ -75,7 +75,7 @@ export default function Registo() {
             className="input"
             type="email"
             autoComplete="email"
-            placeholder="nome@exemplo.com"
+            placeholder="digita o teu email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
